@@ -58,7 +58,7 @@
 .my-carousel{
   margin-top:1.5em;
   height: 100%;
-  border: 1px solid red;
+  border: 1px solid none;
   display: flex;
   overflow-x: scroll;
   scroll-behavior: auto; 
@@ -71,6 +71,7 @@
 }
 .my-carousel{
     scrollbar-width: none;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
 }
 .my-carousel .item img{
     width: 100%;
@@ -89,3 +90,7 @@
 }
 
 
+.my-image{
+  filter: blur(30px);
+  transition: filter 0.5s ease;
+}
