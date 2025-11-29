@@ -184,11 +184,11 @@
 
 
 #purchase-popup{
-  width: 200px;
+/*  width: 200px;
   height: 200px;
-  background-color: gray;
+  background-color: gray;*/
   position: fixed;
-  display: block;
+  /*display: block;*/
   transition: display 0.8s ease-in-out;
   z-index: 5;
 }

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Books</title>
 
-  <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <!-- Bootstrap JS -->
@@ -27,12 +27,8 @@
   </nav>
 
   <div id="books-container">
-    <div id="purchase-popup">
-      
-    </div>
-
     <div class="container-fluid" id="main">
-      <table class="table table-hover caption-top table-hover" id="table-books">
+      <table class="table table-hover caption-top" id="table-books">
         <caption>Books</caption>
         <thead>
           <tr>
@@ -46,10 +42,33 @@
         </tbody>
       </table>
     </div>
+
+    <div class="card mb-3" style="max-width: 540px;" id="purchase-popup">
+      <button type="button" class="btn-close" aria-label="Close" id=button-close-purchase-popup></button>
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Product Name</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="d-flex align-items-center" id="purchase-popup-quantity-group">
+              <div class="pr-2 flex-fill">Quantity</div>
+              <div class="flex-fill"><p class="text-start fs-3">1</p></div>
+              <div class="pl-2 flex-fill">
+                <div class="d-grid gap-2 d-md-block">
+                  <button class="btn btn-primary" type="button"> - </button>
+                  <button class="btn btn-primary" type="button"> + </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-
-  
 
   <script>
     // Add books here following the given format
@@ -105,16 +124,31 @@
 
       tbody.appendChild(row);
     }
-
-    //Add clickable tbody
     
     const main = document.getElementById("main");
-    const popUp = document.getElementById("purchase-popup");
-    popUp.classList.add("hidden");
+    const popup = document.getElementById("purchase-popup");
+    let isPurchasePopupVisible = false;
 
-    tbody.addEventListener("click", () => {
+    // Hide the purchase popup
+    popup.classList.add("hidden");
+
+    function showPurchasePopup() {
+      if (isPurchasePopupVisible) return;
+
       main.classList.add("blur");
-      popUp.classList.remove("hidden");
+      popup.classList.remove("hidden");
+      isPurchasePopupVisible = true;
+
+      // console.log(e.target.parentElement.rowIndex);
+    }
+
+    tbody.addEventListener("click", showPurchasePopup);
+
+    // Attach functionality to the close button
+    document.getElementById("button-close-purchase-popup").addEventListener("click", (e) => {
+      main.classList.remove("blur");
+      popup.classList.add("hidden");
+      isPurchasePopupVisible = false;
     });
 
   </script>
