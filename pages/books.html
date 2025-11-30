@@ -31,8 +31,8 @@
   <div class="row mt-5" id="books-container">
     <!-- Book Preview -->
     <div class="col-lg-4 d-flex flex-column align-items-center">
-      <div class="w-50 mb-2">
-        <button type="button" class="btn-close visually-hidden" id="button-clear-preview" aria-label="Close"></button>
+      <div class="d-flex flex-column w-50 mb-2">
+        <button type="button" class="btn-close ms-auto visually-hidden" id="button-clear-preview" aria-label="Close"></button>
         <img class="img-fluid border rounded" id="cover">
       </div>
 
@@ -274,14 +274,6 @@
       document.getElementById("author").innerHTML = row.dataset.author;
     }
 
-    function clearCurrentlyActiveRow() {
-      currentActiveRow.classList.remove("table-active");
-    }
-
-    function resetBookPreview() {
-      clearCurrentlyActiveRow();
-    }
-
     // Add hover detection to each row
     rows.forEach(row => {
       row.addEventListener("mouseenter", () => {
@@ -291,7 +283,7 @@
       row.addEventListener("click", () => {
         // Clear the previously active row
         if (currentActiveRow) {
-          clearCurrentlyActiveRow();
+          currentActiveRow.classList.remove("table-active");
         }
 
         row.classList.add("table-active");
@@ -302,13 +294,16 @@
         clearPreviewButton.classList.remove("visually-hidden");
 
         updateBookPreview(row);
+        setPurchaseAmount(MIN_PURCHASE_AMOUNT);
       });
     });
 
     clearPreviewButton.addEventListener("click", () => {
       hasBookSelected = false;
-      clearCurrentlyActiveRow();
+      currentActiveRow.classList.remove("table-active");
+      purchaseControl.classList.add("visually-hidden");
       clearPreviewButton.classList.add("visually-hidden");
+      setPurchaseAmount(MIN_PURCHASE_AMOUNT);
     });
 
     // ========== Purchase Control ========== //
