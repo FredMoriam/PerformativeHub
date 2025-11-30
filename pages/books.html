@@ -356,7 +356,7 @@
 
   // Add to cart functionality
   const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+  document.getElementById("add-to-cart-btn").addEventListener("click", () => {
   // Get current product info from popup
   const product = {
     id: document.getElementById("purchase-popup-product-name").textContent + "-" + purchaseAmount,
