@@ -34,10 +34,10 @@
 }
 
 /* Need ba 'to? */
-/*.container-fluid{
+/* .container-fluid{
     display: flex;
     align-items: flex-start;
-}*/
+} */
 
 .brand-wrapper {
   position: relative;       /* keeps navbar height intact */
@@ -123,7 +123,7 @@
             flex-direction: column;
         }
 
-        h1 {
+        #description h1 {
           font-family: 'OpenSauceRegular';
           font-size: 2rem;
           margin-left: 3rem;
@@ -227,6 +227,9 @@
 }
 
 /* End of Music Page */
+
+
+/* LABUBU PAGE */
 .labubu-container {
   display: flex;
   width: 100%;
@@ -238,13 +241,12 @@
 .labubu-carousel {
   flex: 0 0 70%;
   height: 100%;
-  position: relative; /* IMPORTANT */
-  overflow: hidden;   /* Ensures circle doesn't overflow */
+  position: relative;
+  overflow: hidden;
 }
 
 .img-box {
   position: absolute;
-  /* bottom: -960px; */
   left: 50%;
   transform: translate(-50%);
   width: 1600px;
@@ -418,3 +420,68 @@
 }
 
 /* End of Books Page */
+
+
+/* About Page */
+.about-content{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-content img{
+  width: 90vw;
+  height: auto;
+}
+
+.about-title{
+  width: 70%;
+}
+
+.about-title h1{
+  font-size: 4em;
+  font-family: 'OpenSauceBold';
+}
+
+.about-desc{
+  width: 40%;
+  text-align: center;
+}
+
+.about-desc h2{
+  font-size: 1.3em;
+  font-family: 'OpenSauceRegular';
+  line-height: 200%;
+}
+
+.contact-content{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.contact-forms, .contact-header{
+  flex: 1;
+  padding: 1rem;
+}
+
+.contact-header{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.divider{
+  width: 1px;
+  background-color: black;
+}
+
+.contact-forms{
+  font-family: 'OpenSauceRegular';
+}
+
+.btn{
+  background-color: black;
+}
