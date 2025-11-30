@@ -33,7 +33,7 @@
       <p class="fs-2 text-start ms-3 mb-0">Movies</p>
       <div class="d-flex flex-wrap align-content-start" id="movie-container"></div>
   </div>
-  <footer>
+  <footer id="footer">
     <div class="footer-brand">
       <h1>DON'T MISS NEW ITEMS</h1>
 
@@ -64,7 +64,21 @@
       </div>
     </div>
   </footer>
+  <div class="cursor" id="cursor">
+    <svg width="60" height="60">
+      <circle cx="30" cy="30" r="20" stroke="black" stroke-width="1" fill="white"></circle>
+    </svg>
+  </div>   
   <script>
+  //  Cursor
+  const cursor = document.getElementById("cursor")
+  const footer = document.getElementById("footer")
+  footer.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+    cursor.style.display = "block";
+    document.body.style.cursor="none";
+  });
       const MOVIES = [
           {
               "title": "Good Will Hunting",
