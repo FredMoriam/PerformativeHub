@@ -33,10 +33,11 @@
   color: black;
 }
 
-.container-fluid{
+/* Need ba 'to? */
+/*.container-fluid{
     display: flex;
     align-items: flex-start;
-}
+}*/
 
 .brand-wrapper {
   position: relative;       /* keeps navbar height intact */
@@ -383,17 +384,19 @@
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
 }
 
+/* Books page */
 
-#pop-up{
-  width: 200px;
+#purchase-popup{
+/*  width: 200px;
   height: 200px;
-  background-color: gray;
-  position: absolute;
-  display: block;
+  background-color: gray;*/
+  position: fixed;
+  /*display: block;*/
   transition: display 0.8s ease-in-out;
+  z-index: 5;
 }
 
-#pop-up.hidden{
+#purchase-popup.hidden{
   display: none;
   transition: display 0.8s ease-in-out;
 }
@@ -407,3 +410,10 @@
   filter: blur(50px);
   transition: filter 0.8s ease-in-out;
 }
+
+#books-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* End of Books Page */
