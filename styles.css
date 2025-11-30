@@ -110,6 +110,192 @@
   transition: filter 0.5s ease;
 }
 
+/* Start of MoviePage css */
+        .movie-body {
+            /* Ensures body takes up the entire browser viewport */
+            min-height: 100vh; 
+            margin: 0; 
+            display: flex;
+            justify-content: center; 
+            text-align: left;
+            align-items: flex-start;
+            width: 100vw;
+            flex-direction: column;
+        }
+
+        h1 {
+          font-size: 2rem;
+          margin-left: 3rem;
+          text-align: left;
+          margin-bottom: 0;
+        }
+
+        #description {
+          max-width: auto;
+          margin: 0 auto;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+
+        .movie-container {
+          display: flex;
+          flex-wrap: wrap; 
+          justify-content: center;
+          max-width: auto;
+          margin: 1rem auto; 
+          gap: 1rem; 
+        }
+
+        .movie-item {
+            height: 18rem; 
+            width: 12rem;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, border-radius 0.3s ease;
+            margin: 1rem;
+            overflow: hidden;
+        }
+
+        .movie-item:hover {
+            transform: scale(1.1);
+        }
+
+        .movie-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+/*End of Movie Page CSS */
+
+/*Start of Music Page CSS */
+
+  .music-body {
+    min-height: 100vh; 
+    min-width: 100vw;
+    margin: auto; 
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center; 
+    text-align: left;
+    align-items: flex-start;
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+  #song-list {
+    flex: 1 1 50%;
+    padding-top: 1rem;
+  }
+
+#vinyl-container {
+    /*flex: 1 1 50%;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#vinyl-record {
+    width: 25rem;
+    height: auto;
+    display: block;
+}
+
+#album-cover-img {
+    position: absolute;
+    width: 8rem; 
+    height: 8rem;
+    border-radius: 50%; 
+    z-index: 10; 
+    pointer-events: none;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+.is-playing {
+    animation: spin 4s linear infinite; 
+}
+
+.is-playing #album-cover-img {
+    opacity: 1; 
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* End of Music Page */
+.labubu-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.labubu-carousel {
+  height: 100vh;
+}
+
+.img-box {
+  position: absolute;
+  bottom: -960px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 1600px;
+  height: 1600px;
+}
+
+.img-box .img-list {
+  height: inherit;
+  transform: rotate(90deg);
+}
+
+.img-list .img-slider {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  transition: .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.img-slider .img-item {
+  position: absolute;
+  left: 0;
+  transform: rotate(calc(360deg/4 * var(--i)));
+  transform-origin: 800px;
+}
+
+.img-item img {
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 10px rgba(0,0,0,.1));
+  height: 30rem;
+  width: 30rem;
+}
+
+.navigation {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.navigation span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,.2);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 55px;
+
+}
+
+
 #scrollingCanvas {
     position: fixed;
     bottom: 0;
