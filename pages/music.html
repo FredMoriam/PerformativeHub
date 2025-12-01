@@ -77,7 +77,10 @@
   <svg width="60" height="60">
     <circle cx="30" cy="30" r="20" stroke="black" stroke-width="1" fill="white"></circle>
   </svg>
-</div>   
+</div>
+
+<!-- Global JS -->
+<script defer src="../script/main.js"></script>
 
 <script>
   const SONGS = [
@@ -145,21 +148,6 @@
     tbody.appendChild(row);
   }
 
-
-  // Cursor
-  const cursor = document.getElementById("cursor")
-  const footer = document.getElementById("footer")
-  footer.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.pageX + "px";
-    cursor.style.top = e.pageY + "px";
-    cursor.style.display = "block";
-    document.body.style.cursor="none";
-  });
-  footer.addEventListener("mouseleave", (e) => {
-    document.body.style.cursor="default";
-  });
-
-
   const vinylContainer = document.getElementById('vinyl-container');
   const audioPlayer = document.getElementById('audio-player');
 
@@ -212,9 +200,5 @@
     }
   });
 </script>
-
-<!-- Global JS -->
-<script src="script/main.js"></script>
-
 </body>
 </html>
