@@ -180,6 +180,7 @@ footer h1{
   flex-direction: row;
   align-items: center;
   padding: 5%;
+  gap: 5rem;
 }
 
 .footer-nav h4{
@@ -192,6 +193,11 @@ footer h1{
   color: white;
 }
 
+/* MISC */
+.add-box-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.30);
+}
+
 
 /* Start of MoviePage css */
 .movie-item {
@@ -201,7 +207,6 @@ footer h1{
     transition: transform 0.3s ease, border-radius 0.3s ease;
     margin: 1rem;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .movie-item:hover {
